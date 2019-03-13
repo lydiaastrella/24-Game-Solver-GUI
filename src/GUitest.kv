@@ -1,0 +1,142 @@
+<start>:
+	id: start
+	name : start
+	Screen :
+		canvas.before:
+	        Rectangle:
+	            pos: self.pos
+	            size: self.size
+	            source: 'woven-cloth-352481_1920.jpg'
+	    BoxLayout:
+			orientation :'horizontal'
+			size_hint: 0.8, 0.8
+			pos_hint: {'center_x': 0.5125, 'center_y': 0.75}
+			Image:
+				id : Card3
+				source : 'titlesimple.png'
+
+		Button :
+			background_normal: ''
+			background_down: 'woven-cloth-352481_1920.jpg'
+			background_color: .88,.88,.88,1
+			text: 'START'
+			size_hint: 0.4, 0.1
+			pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+			color: 0,0,0,1
+			on_press :
+				root.manager.current = 'play'
+		Button :
+			background_normal: ''
+			background_down: 'woven-cloth-352481_1920.jpg'
+			background_color: .88,.88,.88,1
+			text: 'EXIT'
+			size_hint: 0.4, 0.1
+			pos_hint: {'center_x': 0.5, 'center_y': 0.3}
+			color: 0,0,0,1
+			on_press :
+				root.exit()
+
+<play>
+	Screen:
+		canvas.before:
+	        Rectangle:
+	            pos: self.pos
+	            size: self.size
+	            source: 'woven-cloth-352481_1920.jpg'
+	    Button:
+			background_normal: ''
+			background_down: 'woven-cloth-352481_1920.jpg'
+			background_color: .88,.88,.88,1
+			color: 0,0,0,1
+	    	text: "Draw"
+	    	pos_hint: {'center_x':0.3, 'center_y': 0.4}
+	    	size_hint: 0.175, 0.075
+	    	on_press:
+	    		root.draw()
+
+	    Button:
+			background_normal: ''
+			background_down: 'woven-cloth-352481_1920.jpg'
+			background_color: .88,.88,.88,1
+			color: 0,0,0,1
+	    	text:"Reset"
+	    	pos_hint: {'center_x': 0.3, 'center_y': 0.3}
+	    	size_hint: 0.175, 0.075
+	    	on_press:
+	    		root.reset()
+
+	    Button:
+			background_normal: ''
+			background_down: 'woven-cloth-352481_1920.jpg'
+			background_color: .88,.88,.88,1
+			color: 0,0,0,1
+	    	text: "Exit"
+	    	pos_hint: {'center_x': 0.3, 'center_y': 0.2}
+	    	size_hint: 0.175, 0.075
+	    	on_press:
+	    		root.exit()
+
+	    BoxLayout:
+			orientation :'horizontal'
+			size_hint: 0.55, 0.275
+			pos_hint: {'center_x': 0.1, 'center_y': 0.65}
+			Image:
+				id : Deck
+				source : './PNG/gray_back.png'
+	    BoxLayout:
+			orientation :'horizontal'
+			size_hint: 0.55, 0.275
+			pos_hint: {'center_x': 0.275, 'center_y': 0.65}
+			Image:
+				id : Card1
+				source : './PNG/gray_back.png'
+		BoxLayout:
+			orientation :'horizontal'
+			size_hint: 0.55, 0.275
+			pos_hint: {'center_x': 0.45, 'center_y': 0.65}
+			Image:
+				id : Card2
+				source : './PNG/gray_back.png'
+		BoxLayout:
+			orientation :'horizontal'
+			size_hint: 0.55, 0.275
+			pos_hint: {'center_x': 0.625, 'center_y': 0.65}
+			Image:
+				id : Card3
+				source : './PNG/gray_back.png'
+		BoxLayout:
+			orientation :'horizontal'
+			size_hint: 0.55, 0.275
+			pos_hint: {'center_x': 0.8, 'center_y': 0.65}
+			Image:
+				id : Card4
+				source : './PNG/gray_back.png'
+		Label:
+			text:'24 solver'
+			size_hint_y: 1.8
+
+		Label:
+			text: 'Card on Deck : '
+			size_hint_y: 3
+			pos_hint: {'center_x':0.68, 'center_y': 0.35}
+
+
+		Label:
+			text: 'Solution : '
+			size_hint_y: 3
+			pos_hint: {'center_x':0.66, 'center_y': 0.25}
+			halign :'left'
+
+		Label:
+			id: Card_on_Deck
+			text: '52'
+			size_hint_y: 3
+			pos_hint: {'center_x':0.76, 'center_y': 0.35}
+
+		Label:
+			id: Solution
+			text: '-'
+			size_hint_y: 3
+			pos_hint: {'center_x':0.76, 'center_y': 0.25}
+			halign :'left'
+	
